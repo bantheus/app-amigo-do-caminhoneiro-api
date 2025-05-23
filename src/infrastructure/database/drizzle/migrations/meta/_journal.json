@@ -15,6 +15,13 @@
       "when": 1748026291024,
       "tag": "0001_workable_lightspeed",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1748026991693,
+      "tag": "0002_exotic_layla_miller",
+      "breakpoints": true
     }
   ]
 }
