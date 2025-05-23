@@ -50,6 +50,13 @@
       "when": 1748028391229,
       "tag": "0006_tough_sasquatch",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1748028523306,
+      "tag": "0007_nosy_gravity",
+      "breakpoints": true
     }
   ]
 }
