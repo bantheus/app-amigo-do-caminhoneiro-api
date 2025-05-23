@@ -43,6 +43,13 @@
       "when": 1748028171536,
       "tag": "0005_tearful_unicorn",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1748028391229,
+      "tag": "0006_tough_sasquatch",
+      "breakpoints": true
     }
   ]
 }
