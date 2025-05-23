@@ -1,4 +1,8 @@
+import { relations } from 'drizzle-orm';
 import { pgTable, real, text, timestamp } from 'drizzle-orm/pg-core';
+import { abastecimentos } from './abastecimento';
+import { despesas } from './despesa';
+import { paradas } from './parada';
 import { usuarios } from './usuario';
 import { veiculos } from './veiculo';
 
@@ -24,3 +28,17 @@ export const viagens = pgTable('viagens', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
+
+export const viagensRelations = relations(viagens, ({ one, many }) => ({
+  usuario: one(usuarios, {
+    fields: [viagens.usuarioId],
+    references: [usuarios.id],
+  }),
+  veiculo: one(veiculos, {
+    fields: [viagens.veiculoId],
+    references: [veiculos.id],
+  }),
+  abastecimentos: many(abastecimentos),
+  paradas: many(paradas),
+  despesas: many(despesas),
+}));

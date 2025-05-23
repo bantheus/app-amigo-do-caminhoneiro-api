@@ -1,3 +1,4 @@
+import { relations } from 'drizzle-orm';
 import { pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 import { veiculos } from './veiculo';
 
@@ -13,3 +14,13 @@ export const documentacaoVeiculos = pgTable('documentacao_veiculos', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
+
+export const documentacaoVeiculosRelations = relations(
+  documentacaoVeiculos,
+  ({ one }) => ({
+    veiculo: one(veiculos, {
+      fields: [documentacaoVeiculos.veiculoId],
+      references: [veiculos.id],
+    }),
+  }),
+);
