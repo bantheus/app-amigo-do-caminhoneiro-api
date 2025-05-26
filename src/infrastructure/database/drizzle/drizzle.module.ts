@@ -12,7 +12,6 @@ import * as schema from './schema';
       provide: 'DRIZZLE_DB',
       useFactory: (configService: ConfigService) => {
         const pool = new Pool({
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
           connectionString: configService.get<string>('DATABASE_URL'),
         });
         return drizzle(pool, { schema });
